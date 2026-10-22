@@ -1,0 +1,174 @@
+
+/* Bella's Bakery - Lemon Cake Website */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* General styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 50px 20px;
+  background-color: #F4DDE3;
+  color: #49363B;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Main recipe card */
+.recipe-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #FFF9F5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(120, 70, 80, 0.12);
+}
+
+/* Main lemon cake image */
+.hero-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Recipe content */
+.recipe-content {
+  padding: 40px 50px;
+}
+
+/* Bella's Bakery name */
+.category {
+  color: #B76E79;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Main heading */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #A65F70;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+/* Subtitle: Baked with love */
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #967A80;
+  margin-bottom: 25px;
+}
+
+/* Introduction box */
+.intro {
+  background-color: #F9E9EC;
+  padding: 20px;
+  border-left: 4px solid #D9A0AE;
+  border-radius: 5px;
+  line-height: 1.8;
+}
+
+/* Recipe sections */
+section {
+  margin-top: 35px;
+}
+
+/* Ingredients and instructions headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 600;
+  color: #A65F70;
+  margin-bottom: 10px;
+}
+
+/* Small description text */
+.section-description {
+  color: #806A70;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Ingredients and instructions lists */
+ul, ol {
+  padding-left: 25px;
+}
+
+li {
+  padding: 5px 0;
+}
+
+li::marker {
+  color: #B76E79;
+}
+
+/* Serving suggestions images */
+.image-gallery {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: calc(50% - 7.5px);
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 1px solid #EAD4D9;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #B76E79;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px 10px;
+  }
+
+  .hero-image {
+    height: 230px;
+  }
+
+  .recipe-content {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+  }
+
+  .image-gallery img {
+    width: 100%;
+    height: 220px;
+  }
+}

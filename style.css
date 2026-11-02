@@ -1,8 +1,7 @@
-
 /* Bella's Bakery - Lemon Cake Website */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 /* General styling */
 * {
@@ -12,9 +11,9 @@
 body {
   margin: 0;
   padding: 50px 20px;
-  background-color: #F4DDE3;
-  color: #49363B;
-  font-family: 'DM Sans', sans-serif;
+  background-color: #f4dde3;
+  color: #49363b;
+  font-family: "DM Sans", sans-serif;
   font-size: 15px;
   line-height: 1.7;
 }
@@ -23,7 +22,7 @@ body {
 .recipe-card {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #FFF9F5;
+  background-color: #fff9f5;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(120, 70, 80, 0.12);
@@ -44,7 +43,7 @@ body {
 
 /* Bella's Bakery name */
 .category {
-  color: #B76E79;
+  color: #b76e79;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -54,28 +53,28 @@ body {
 
 /* Main heading */
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 42px;
   font-weight: 600;
-  color: #A65F70;
+  color: #a65f70;
   margin: 0 0 10px;
   line-height: 1.3;
 }
 
 /* Subtitle: Baked with love */
 .subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: 18px;
-  color: #967A80;
+  color: #967a80;
   margin-bottom: 25px;
 }
 
 /* Introduction box */
 .intro {
-  background-color: #F9E9EC;
+  background-color: #f9e9ec;
   padding: 20px;
-  border-left: 4px solid #D9A0AE;
+  border-left: 4px solid #d9a0ae;
   border-radius: 5px;
   line-height: 1.8;
 }
@@ -87,22 +86,23 @@ section {
 
 /* Ingredients and instructions headings */
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 27px;
   font-weight: 600;
-  color: #A65F70;
+  color: #a65f70;
   margin-bottom: 10px;
 }
 
 /* Small description text */
 .section-description {
-  color: #806A70;
+  color: #806a70;
   font-size: 14px;
   margin-bottom: 15px;
 }
 
 /* Ingredients and instructions lists */
-ul, ol {
+ul,
+ol {
   padding-left: 25px;
 }
 
@@ -111,7 +111,7 @@ li {
 }
 
 li::marker {
-  color: #B76E79;
+  color: #b76e79;
 }
 
 /* Serving suggestions images */
@@ -133,16 +133,15 @@ footer {
   text-align: center;
   margin-top: 45px;
   padding-top: 20px;
-  border-top: 1px solid #EAD4D9;
-  font-family: 'Playfair Display', serif;
+  border-top: 1px solid #ead4d9;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: 16px;
-  color: #B76E79;
+  color: #b76e79;
 }
 
 /* Mobile responsive design */
 @media (max-width: 600px) {
-
   body {
     padding: 20px 10px;
   }

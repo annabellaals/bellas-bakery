@@ -1,173 +1,297 @@
 /* Bella's Bakery - Lemon Cake Website */
 
-/* Google Fonts */
+/* I imported fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
-/* General styling */
-* {
+/* I added a small CSS reset based on common browser reset practices */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  margin: 0;
 }
 
 body {
   margin: 0;
-  padding: 50px 20px;
-  background-color: #f4dde3;
-  color: #49363b;
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* I added variables to keep my colors, fonts and spacing in one place */
+:root {
+  --color-background: #f4dde3;
+  --color-card: #fff9f5;
+  --color-text: #49363b;
+  --color-heading: #934657;
+  --color-accent: #934657;
+  --color-muted: #665056;
+  --color-intro: #f9e9ec;
+  --color-border: #d9a0ae;
+  --color-footer-border: #ead4d9;
+  --color-focus: #713047;
+
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  --space-small: 0.75rem;
+  --space-medium: 1.25rem;
+  --space-large: 2.5rem;
+
+  --radius-small: 0.5rem;
+  --radius-large: 0.75rem;
+}
+
+/* I used my variables for the page colors and fonts */
+body {
+  padding: 3.125rem 1.25rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.7;
+}
+
+/* I styled the header and navigation */
+body > header {
+  max-width: 50rem;
+  margin: 0 auto var(--space-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+body > header p {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-small);
+}
+
+nav a:hover {
+  background-color: var(--color-card);
+  text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+  color: var(--color-heading);
+  text-decoration: underline;
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
 /* Main recipe card */
 .recipe-card {
-  max-width: 800px;
+  max-width: 50rem;
   margin: 0 auto;
-  background-color: #fff9f5;
-  border-radius: 12px;
+  background-color: var(--color-card);
+  border-radius: var(--radius-large);
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(120, 70, 80, 0.12);
+  box-shadow: 0 8px 30px rgba(73, 54, 59, 0.12);
 }
 
 /* Main lemon cake image */
 .hero-image {
   width: 100%;
-  height: 350px;
+  height: 21.875rem;
   object-fit: cover;
-  display: block;
 }
 
 /* Recipe content */
 .recipe-content {
-  padding: 40px 50px;
+  padding: var(--space-large) 3.125rem;
 }
 
-/* Bella's Bakery name */
+/* Bella's Bakery name above the title */
 .category {
-  color: #b76e79;
-  font-size: 14px;
+  color: var(--color-accent);
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-small);
 }
 
 /* Main heading */
 h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 42px;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 2.625rem);
   font-weight: 600;
-  color: #a65f70;
-  margin: 0 0 10px;
+  color: var(--color-heading);
+  margin: 0 0 0.625rem;
   line-height: 1.3;
 }
 
 /* Subtitle: Baked with love */
 .subtitle {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-style: italic;
-  font-size: 18px;
-  color: #967a80;
-  margin-bottom: 25px;
+  font-size: 1.125rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5625rem;
 }
 
 /* Introduction box */
 .intro {
-  background-color: #f9e9ec;
-  padding: 20px;
-  border-left: 4px solid #d9a0ae;
-  border-radius: 5px;
+  background-color: var(--color-intro);
+  padding: var(--space-medium);
+  border-left: 4px solid var(--color-border);
+  border-radius: 0.3125rem;
   line-height: 1.8;
+}
+
+/* I styled the recipe facts using grid */
+.recipe-info {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  padding: var(--space-medium);
+  background-color: var(--color-intro);
+  border-radius: var(--radius-small);
+}
+
+.recipe-info dt {
+  font-weight: 700;
+}
+
+.recipe-info dd {
+  margin: 0;
 }
 
 /* Recipe sections */
 section {
-  margin-top: 35px;
+  margin-top: 2.1875rem;
 }
 
 /* Ingredients and instructions headings */
 h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 27px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 1.6875rem);
   font-weight: 600;
-  color: #a65f70;
-  margin-bottom: 10px;
+  color: var(--color-heading);
+  margin-bottom: 0.625rem;
 }
 
 /* Small description text */
 .section-description {
-  color: #806a70;
-  font-size: 14px;
-  margin-bottom: 15px;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.9375rem;
 }
 
 /* Ingredients and instructions lists */
 ul,
 ol {
-  padding-left: 25px;
+  padding-inline-start: 1.5625rem;
 }
 
 li {
-  padding: 5px 0;
+  padding-block: 0.3125rem;
 }
 
 li::marker {
-  color: #b76e79;
+  color: var(--color-accent);
 }
 
-/* Serving suggestions images */
+/* I added spacing and a pointer for the ingredient checkboxes */
+input[type="checkbox"] {
+  margin-inline-end: 0.625rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* I used :has() to cross out ingredients that are checked */
+li:has(input[type="checkbox"]:checked) label {
+  text-decoration: line-through;
+  color: var(--color-muted);
+}
+
+/* I added a visible outline for keyboard users */
+input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* I updated the gallery because the images are inside figure elements */
 .image-gallery {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin-top: var(--space-medium);
+}
+
+.image-gallery figure {
+  margin: 0;
+  min-width: 0;
 }
 
 .image-gallery img {
-  width: calc(50% - 7.5px);
-  height: 230px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-small);
 }
 
-/* Footer */
-footer {
+.image-gallery figcaption {
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
   text-align: center;
-  margin-top: 45px;
-  padding-top: 20px;
-  border-top: 1px solid #ead4d9;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 16px;
-  color: #b76e79;
 }
 
-/* Mobile responsive design */
+/* I updated the footer to match the width of my website */
+footer {
+  max-width: 50rem;
+  margin: 2.8125rem auto 0;
+  padding-top: var(--space-medium);
+  border-top: 1px solid var(--color-footer-border);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-heading);
+}
+
+/* I kept a small-screen adjustment for the page spacing */
 @media (max-width: 600px) {
   body {
-    padding: 20px 10px;
+    padding: 1.25rem 0.625rem;
   }
 
   .hero-image {
-    height: 230px;
+    height: 14.375rem;
   }
 
   .recipe-content {
-    padding: 25px 20px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  .image-gallery {
-    flex-direction: column;
-  }
-
-  .image-gallery img {
-    width: 100%;
-    height: 220px;
+    padding: 1.5625rem 1.25rem;
   }
 }

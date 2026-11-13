@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Makes the page work on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title shown in the browser tab -->
+    <title>Homemade Lemon Cake | Bella's Bakery</title>
+
+    <!-- Connects the HTML file to the CSS file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- I added a header for my bakery name -->
+    <header>
+      <p>Bella's Bakery</p>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="lemon-cake.html" aria-current="page">Lemon Cake</a>
+        <a href="#">Share Recipe</a>
+      </nav>
+    </header>
+    <!-- Main container for the recipe -->
+    <main class="recipe-card">
+      <!-- I added article to group my whole recipe together -->
+      <article>
+        <!-- Main image at the top of the page -->
+        <img
+          src="images/lemon-cake-main.jpg"
+          alt="Slices of lemon with lemon cake"
+          class="hero-image"
+        />
+
+        <!-- Container for all recipe text and sections -->
+        <div class="recipe-content">
+          <!-- Recipe category -->
+          <p class="category">Cakes</p>
+
+          <!-- Recipe heading -->
+          <h1>Homemade Lemon Cake</h1>
+
+          <!-- Short subtitle -->
+          <p class="subtitle">Baked with love.</p>
+
+          <!-- I changed div to p because this is just a paragraph -->
+          <p class="intro">
+            Soft and fluffy lemon cake is full of fresh citrus flavor.
+          </p>
+          <!-- I added dl, dt and dd to show the servings, time and difficulty -->
+          <dl class="recipe-info">
+            <dt>Servings</dt>
+            <dd>8 slices</dd>
+
+            <dt>Total time</dt>
+            <dd>60–75 minutes</dd>
+
+            <dt>Difficulty</dt>
+            <dd>Easy</dd>
+          </dl>
+          <!-- Ingredients section -->
+          <section>
+            <h2>Ingredients</h2>
+
+            <!-- Small text below the heading -->
+            <p class="section-description">Everything you need.</p>
+
+            <!-- I added checkboxes and labels so people can tick off the ingredients -->
+
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  200 g unsalted butter, softened
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  200 g caster sugar
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  3 large eggs
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  200g all-purpose flour
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  2 tsp baking powder
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  Zest of 2 lemons
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  2 tbsp fresh lemon juice
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  1 tsp vanilla extract
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  2 tbsp milk
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" />
+                  1 pinch of salt
+                </label>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Baking instructions -->
+          <section>
+            <h2>How to Make It</h2>
+
+            <!-- I kept ol because the baking steps need to be in order -->
+            <ol>
+              <li>Preheat your oven to 180°C (160°C fan).</li>
+              <li>Grease and line a 20 cm round cake tin with baking paper.</li>
+              <li>
+                Beat the softened butter and sugar together until light and
+                fluffy.
+              </li>
+              <li>
+                Add the eggs one at a time, mixing well after each addition.
+              </li>
+              <li>Mix in the lemon zest, lemon juice, and vanilla extract.</li>
+              <li>
+                In a separate bowl, combine the flour, baking powder, and salt.
+              </li>
+              <li>
+                Gently fold the dry ingredients into the wet mixture, adding the
+                milk.
+              </li>
+              <li>
+                Pour the batter into the prepared cake tin and smooth the top.
+              </li>
+              <li>
+                Bake for 35–45 minutes, or until a skewer inserted into the
+                centre comes out clean.
+              </li>
+              <li>
+                Let the cake cool in the tin for 10 minutes, then transfer it to
+                a wire rack.
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h2>Serving Suggestions</h2>
+
+            <!-- Container for the two bottom images -->
+            <div class="image-gallery">
+              <!-- First gallery image -->
+              <!-- I added figure and figcaption to give the image a caption -->
+              <figure>
+                <img
+                  src="images/lemon-cake-1.jpg"
+                  alt="Golden lemon cake with lemon slices and a fork beside it"
+                />
+                <figcaption>
+                  Freshly baked lemon cake with lemon slices.
+                </figcaption>
+              </figure>
+
+              <!-- I also added figure and figcaption for my second image -->
+              <figure>
+                <img
+                  src="images/lemon-cake-2.jpg"
+                  alt="Slices of lemon cake on a blue plate"
+                />
+                <figcaption>Lemon cake served on a blue plate.</figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <!-- I moved the footer outside main because it belongs to the whole website -->
+    <footer>
+      <p>Made with love</p>
+    </footer>
+  </body>
+</html>

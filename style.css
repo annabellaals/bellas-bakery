@@ -28,7 +28,8 @@ img {
   --color-text: #49363b;
   --color-heading: #934657;
   --color-accent: #934657;
-  --color-muted: #665056;
+  --color-checked: #665056;
+  --color-muted: #7e5c66;
   --color-intro: #f9e9ec;
   --color-border: #d9a0ae;
   --color-footer-border: #ead4d9;
@@ -72,38 +73,40 @@ body > header {
 body > header p {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--color-heading);
 }
-
+/* I changed my navigation CSS by putting the link styles inside nav.
+   I used & for hover, current page and focus styles.
+   This keeps my code together and avoids repeating nav a. */
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-}
 
-nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.35rem 0.5rem;
-  border-radius: var(--radius-small);
-}
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius-small);
 
-nav a:hover {
-  background-color: var(--color-card);
-  text-decoration: underline;
-}
+    &:hover {
+      background-color: var(--color-card);
+      text-decoration: underline;
+    }
 
-nav a[aria-current="page"] {
-  color: var(--color-heading);
-  text-decoration: underline;
-}
+    &[aria-current="page"] {
+      color: var(--color-heading);
+      text-decoration: underline;
+    }
 
-nav a:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 3px;
+    &:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 3px;
+    }
+  }
 }
 
 /* Main recipe card */
@@ -113,7 +116,7 @@ nav a:focus-visible {
   background-color: var(--color-card);
   border-radius: var(--radius-large);
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(73, 54, 59, 0.12);
+  box-shadow: 0 0.625rem 1.25rem var(--color-shadow);
 }
 
 /* Main lemon cake image */
@@ -128,7 +131,7 @@ nav a:focus-visible {
   padding: var(--space-large) 3.125rem;
 }
 
-/* Bella's Bakery name above the title */
+/* Recipe category above the title */
 .category {
   color: var(--color-accent);
   font-size: 0.875rem;
@@ -141,7 +144,7 @@ nav a:focus-visible {
 /* Main heading */
 h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 2.625rem);
+  font-size: 2.5rem;
   font-weight: 600;
   color: var(--color-heading);
   margin: 0 0 0.625rem;
@@ -166,17 +169,17 @@ h1 {
   line-height: 1.8;
 }
 
-/* I styled the recipe facts using grid */
+/* I used grid to organize the recipe information into two columns */
 .recipe-info {
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: max-content auto;
   gap: 0.25rem 1rem;
   padding: var(--space-medium);
   background-color: var(--color-intro);
   border-radius: var(--radius-small);
 }
 
-.recipe-info dt {
+.recipe-info :where(dt) {
   font-weight: 700;
 }
 
@@ -192,7 +195,7 @@ section {
 /* Ingredients and instructions headings */
 h2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 1.6875rem);
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-heading);
   margin-bottom: 0.625rem;
@@ -206,8 +209,8 @@ h2 {
 }
 
 /* Ingredients and instructions lists */
-ul,
-ol {
+/* I used :is() to give both lists the same spacing */
+:is(ul, ol) {
   padding-inline-start: 1.5625rem;
 }
 
@@ -233,7 +236,7 @@ label {
 /* I used :has() to cross out ingredients that are checked */
 li:has(input[type="checkbox"]:checked) label {
   text-decoration: line-through;
-  color: var(--color-muted);
+  color: var(--color-checked);
 }
 
 /* I added a visible outline for keyboard users */
@@ -295,4 +298,30 @@ footer {
   .recipe-content {
     padding: 1.5625rem 1.25rem;
   }
+}
+/* Homepage recipe cards */
+.recipe-gallery {
+  display: grid;
+  gap: var(--space-medium);
+}
+
+.recipe-gallery article {
+  background-color: var(--color-intro);
+  padding: var(--space-medium);
+  border-radius: var(--radius-small);
+}
+
+.recipe-gallery img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+}
+
+.recipe-gallery a {
+  color: var(--color-heading);
+}
+
+.recipe-gallery h3 {
+  font-family: var(--font-heading);
 }
